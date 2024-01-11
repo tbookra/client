@@ -44,7 +44,7 @@ nav li a {
 .container {
   height: calc(100vh - 80px);
   overflow-y: scroll;
-  padding:0 20px;
+  padding: 0 20px;
   /* max-width: 95%; */
 }
 .footer {
@@ -67,5 +67,10 @@ nav li a {
   width: 120px;
 }
 .resultContainer {
-  height: 30px;
+  min-height: 30px;
+  color: chocolate;
+}
+.resultsContainer {
+  margin-bottom: 10px;
+  /* height: 60px; */
 }

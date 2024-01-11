@@ -13,13 +13,12 @@ const Result = ({ question, value }) => {
         question_id:q_id.question.idquestions,
         answer_value:answer
       }
-
     );
     setQuestionResult(data);
   };
 
-  const correct = value[question.question.idquestions]?.toString() ===
-  question.question.right_answer?.toString()
+  const correct = question.question.right_answer ? (value[question.question.idquestions]?.toString() ===
+  question.question.right_answer?.toString()? "correct" : "incorrect") : null
   return (
     <div className="resultContainer">
       <button
@@ -31,9 +30,10 @@ const Result = ({ question, value }) => {
       >
         Submit
       </button>
-      {questionResult ? (<div>
-        <div>{correct ? "תשובה נכונה" : "תשובה שגויה"}  </div>
-        <div>answered like you {questionResult.count}</div>
+      {questionResult ? (<div className="resultsContainer">
+        {/* <div>{correct ?(correct ==="correct" ? "Correct!" : "wrong"): null}  </div> */}
+        {correct ?<div>{correct ==="correct" ? "Correct!" : "wrong"}  </div>: null}
+        <div>answered like you: {questionResult.count}</div>
       </div>) : null}
     </div>
   );
